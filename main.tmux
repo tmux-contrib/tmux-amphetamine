@@ -3,9 +3,9 @@
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # shellcheck disable=1090
-source "${CURRENT_DIR}/scripts/helpers.sh"
+source "${CURRENT_DIR}/scripts/tmux-core.sh"
 
-amphetamine_status="#(${CURRENT_DIR}/scripts/amphetamine.sh)"
+amphetamine_status="#(${CURRENT_DIR}/scripts/tmux-amphetamine.sh)"
 amphetamine_status_pattern="\#{amphetamine_status}"
 
 tmux_update_option() {
