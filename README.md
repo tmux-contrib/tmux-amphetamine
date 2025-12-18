@@ -1,23 +1,79 @@
 # tmux-amphetamine
 
-This plugin displays the [Amphetamine
-Application](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12)
-status.
+A tmux plugin that displays the [Amphetamine](https://apps.apple.com/app/amphetamine/id937984704) session status in the status bar.
+
+## Features
+
+- Display whether Amphetamine is keeping your Mac awake
+- Customizable icons for active/inactive states
+- Lightweight AppleScript integration
+
+## Requirements
+
+- macOS
+- [Amphetamine](https://apps.apple.com/app/amphetamine/id937984704) app installed
 
 ## Installation
 
-This is a plugin for [tmux plugin
-manager](https://github.com/tmux-plugins/tpm). You can install it by adding the
-following line in your tmux config.
+### Using TPM
 
-```shell
+Add the following line to your `~/.tmux.conf`:
+
+```tmux
 set -g @plugin 'tmux-contrib/tmux-amphetamine'
 ```
 
-## Getting Started
+Then press `prefix` + <kbd>I</kbd> to install.
 
-You can use the `#{amphetamine_status}` variable in your existing status line.
+### Manual
 
-```shell
-set-option -g status-right '#{amphetamine_status}'
+Clone the repository:
+
+```bash
+git clone https://github.com/tmux-contrib/tmux-amphetamine ~/.tmux/plugins/tmux-amphetamine
 ```
+
+Add to your `~/.tmux.conf`:
+
+```tmux
+run-shell ~/.tmux/plugins/tmux-amphetamine/main.tmux
+```
+
+## Usage
+
+Add the `#{amphetamine_status}` format string to your status bar:
+
+```tmux
+set -g status-right "#{amphetamine_status} | %H:%M"
+```
+
+### Format Strings
+
+| Format String           | Description                          |
+|-------------------------|--------------------------------------|
+| `#{amphetamine_status}` | Current Amphetamine session status   |
+
+### Configuration
+
+Customize the icons for each state:
+
+```tmux
+# Icon when a session is active (default: "󰻂")
+set -g @amphetamine_session_on_icon "󰻂"
+
+# Icon when no session is active (default: "󰻃")
+set -g @amphetamine_session_off_icon "󰻃"
+```
+
+### Example Output
+
+- `󰻂` - Session active (Mac is being kept awake)
+- `󰻃` - No active session
+
+## Documentation
+
+See [docs/API.md](docs/API.md) for the full API documentation.
+
+## License
+
+[MIT](LICENSE)
