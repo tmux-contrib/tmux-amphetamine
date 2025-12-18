@@ -1,10 +1,44 @@
 #!/bin/bash
 
+# Get the Amphetamine session status with customizable icons.
+#
+# Retrieves the current session status from the Amphetamine app (macOS keep-awake
+# utility) and displays an appropriate icon based on whether a session is active.
+#
+# Configuration Options:
+#   @amphetamine_session_on_icon  - Icon when session is active (default: "󰻂")
+#   @amphetamine_session_off_icon - Icon when session is inactive (default: "󰻃")
+#
+# Globals:
+#   None
+# Arguments:
+#   None
+# Outputs:
+#   The session status icon to stdout
+# Returns:
+#   0 on success
+# Dependencies:
+#   - macos/tmux-amphetamine.scpt: AppleScript to query Amphetamine app
+
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PLUGIN_DIR="$(dirname "$CURRENT_DIR")"
 
-# shellcheck disable=1090
-source "${CURRENT_DIR}/tmux-core.sh"
+# shellcheck source=scripts/core.sh
+source "${CURRENT_DIR}/core.sh"
 
+# Main entry point for the Amphetamine status script.
+#
+# Queries Amphetamine session status via AppleScript and displays the
+# appropriate icon based on whether a session is active.
+#
+# Globals:
+#   None
+# Arguments:
+#   None
+# Outputs:
+#   Session status icon (on or off icon)
+# Returns:
+#   0 on success
 main() {
 	local opt_session_active
 	local opt_session_on_icon
@@ -12,7 +46,7 @@ main() {
 
 	opt_session_on_icon="$(tmux_get_option "@amphetamine_session_on_icon" "󰻂")"
 	opt_session_off_icon="$(tmux_get_option "@amphetamine_session_off_icon" "󰻃")"
-	opt_session_active="$("${CURRENT_DIR}/amphetamine.scpt")"
+	opt_session_active="$("${PLUGIN_DIR}/macos/tmux-amphetamine.scpt")"
 
 	if [[ "$opt_session_active" == "true" ]]; then
 		echo "$opt_session_on_icon"
