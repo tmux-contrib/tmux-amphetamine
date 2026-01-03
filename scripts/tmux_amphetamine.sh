@@ -44,8 +44,8 @@ main() {
 	local opt_session_on_icon
 	local opt_session_off_icon
 
-	opt_session_on_icon="$(tmux_get_option "@amphetamine_session_on_icon" "󰻂")"
-	opt_session_off_icon="$(tmux_get_option "@amphetamine_session_off_icon" "󰻃")"
+	opt_session_on_icon="$(_tmux_get_option "@amphetamine_session_on_icon" "󰻂")"
+	opt_session_off_icon="$(_tmux_get_option "@amphetamine_session_off_icon" "󰻃")"
 	opt_session_active="$("$_tmux_amphetamine_plugin_dir/macos/tmux-amphetamine.scpt")"
 
 	if [[ "$opt_session_active" == "true" ]]; then
