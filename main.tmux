@@ -16,12 +16,12 @@
 #   @amphetamine_session_on_icon  - Icon when active (default: "󰻂")
 #   @amphetamine_session_off_icon - Icon when inactive (default: "󰻃")
 
-CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+_tmux_amphetamine_root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# shellcheck source=scripts/core.sh
-source "${CURRENT_DIR}/scripts/core.sh"
+# shellcheck source=scripts/tmux_amphetamine_core.sh
+source "$_tmux_amphetamine_root_dir/scripts/tmux_amphetamine_core.sh"
 
-amphetamine_status="#(${CURRENT_DIR}/scripts/tmux-amphetamine.sh)"
+amphetamine_status="#($_tmux_amphetamine_root_dir/scripts/tmux_amphetamine.sh)"
 amphetamine_status_pattern="\#{amphetamine_status}"
 
 # Update a tmux option by interpolating the amphetamine status pattern.

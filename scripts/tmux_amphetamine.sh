@@ -20,11 +20,11 @@
 # Dependencies:
 #   - macos/tmux-amphetamine.scpt: AppleScript to query Amphetamine app
 
-CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PLUGIN_DIR="$(dirname "$CURRENT_DIR")"
+_tmux_amphetamine_source_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+_tmux_amphetamine_plugin_dir="$(dirname "$_tmux_amphetamine_source_dir")"
 
-# shellcheck source=scripts/core.sh
-source "${CURRENT_DIR}/core.sh"
+# shellcheck source=tmux_amphetamine_core.sh
+source "$_tmux_amphetamine_source_dir/tmux_amphetamine_core.sh"
 
 # Main entry point for the Amphetamine status script.
 #
@@ -46,7 +46,7 @@ main() {
 
 	opt_session_on_icon="$(tmux_get_option "@amphetamine_session_on_icon" "󰻂")"
 	opt_session_off_icon="$(tmux_get_option "@amphetamine_session_off_icon" "󰻃")"
-	opt_session_active="$("${PLUGIN_DIR}/macos/tmux-amphetamine.scpt")"
+	opt_session_active="$("$_tmux_amphetamine_plugin_dir/macos/tmux-amphetamine.scpt")"
 
 	if [[ "$opt_session_active" == "true" ]]; then
 		echo "$opt_session_on_icon"
