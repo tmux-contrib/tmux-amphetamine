@@ -2,15 +2,19 @@
 
 A tmux plugin that displays the [Amphetamine](https://apps.apple.com/app/amphetamine/id937984704) session status in the status bar.
 
+## Dependencies
+
+- macOS with [Amphetamine](https://apps.apple.com/app/amphetamine/id937984704) installed
+
 ## Installation
 
-```tmux
-# configure the tmux plugins manager
-set -g @plugin "tmux-plugins/tpm"
+Add this plugin to your `~/.tmux.conf`:
 
-# official plugins
+```tmux
 set -g @plugin 'tmux-contrib/tmux-amphetamine'
 ```
+
+And install it by running `<prefix> + I`.
 
 ## Usage
 
@@ -20,7 +24,7 @@ Add the `#{amphetamine_status}` format string to your status bar:
 set -g status-right "#{amphetamine_status} | %H:%M"
 ```
 
-### Options
+## Configuration
 
 | Option                         | Default | Description                      |
 |--------------------------------|---------|----------------------------------|
@@ -32,3 +36,33 @@ set -g status-right "#{amphetamine_status} | %H:%M"
 | Format String           | Description                          |
 |-------------------------|--------------------------------------|
 | `#{amphetamine_status}` | Current Amphetamine session status   |
+
+## Development
+
+### Prerequisites
+
+Install dependencies using [Nix](https://nixos.org/):
+
+```sh
+nix develop
+```
+
+Or install manually: `bash`, `tmux`, `bats`
+
+### Running Tests
+
+```sh
+bats tests/
+```
+
+### Debugging
+
+Enable trace output with the `DEBUG` environment variable:
+
+```sh
+DEBUG=1 /path/to/tmux-amphetamine/scripts/tmux_amphetamine.sh
+```
+
+## License
+
+MIT
