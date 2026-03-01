@@ -1,6 +1,6 @@
 # tmux-amphetamine
 
-A tmux plugin that displays the [Amphetamine](https://apps.apple.com/app/amphetamine/id937984704) session status in the status bar.
+Show [Amphetamine](https://apps.apple.com/app/amphetamine/id937984704) keep-awake session status in your tmux status bar.
 
 ## Dependencies
 
