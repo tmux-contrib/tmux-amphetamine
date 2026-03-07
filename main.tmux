@@ -13,7 +13,7 @@ _tmux_amphetamine_root="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$_tmux_amphetamine_root/scripts/tmux_core.sh"
 
 amphetamine_status="#($_tmux_amphetamine_root/scripts/tmux_amphetamine.sh)"
-amphetamine_status_pattern="\#{amphetamine_status}"
+amphetamine_status_pattern="\#{amphetamine}"
 
 _tmux_interpolate() {
 	local content=$1

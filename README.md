@@ -18,24 +18,24 @@ And install it by running `<prefix> + I`.
 
 ## Usage
 
-Add the `#{amphetamine_status}` format string to your status bar:
+Add the `#{amphetamine}` format string to your status bar:
 
 ```tmux
-set -g status-right "#{amphetamine_status} | %H:%M"
+set -g status-right "#{amphetamine} | %H:%M"
 ```
 
 ## Configuration
 
-| Option                         | Default | Description                      |
-|--------------------------------|---------|----------------------------------|
-| `@amphetamine_session_on_icon` | "󰻂"    | Icon when a session is active    |
-| `@amphetamine_session_off_icon`| "󰻃"    | Icon when no session is active   |
+| Option                        | Default | Description                      |
+|-------------------------------|---------|----------------------------------|
+| `@amphetamine-active-icon`    | "󰻂"    | Icon when a session is active    |
+| `@amphetamine-inactive-icon`  | "󰻃"    | Icon when no session is active   |
 
 ### Format Strings
 
-| Format String           | Description                          |
-|-------------------------|--------------------------------------|
-| `#{amphetamine_status}` | Current Amphetamine session status   |
+| Format String    | Description                          |
+|------------------|--------------------------------------|
+| `#{amphetamine}` | Current Amphetamine session status   |
 
 ## Development
 
