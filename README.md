@@ -1,6 +1,6 @@
 # tmux-amphetamine
 
-[![Test](https://github.com/tmux-contrib/tmux-amphetamine/actions/workflows/test.yml/badge.svg)](https://github.com/tmux-contrib/tmux-amphetamine/actions/workflows/test.yml) [![Release](https://img.shields.io/github/v/release/tmux-contrib/tmux-amphetamine)](https://github.com/tmux-contrib/tmux-amphetamine/releases) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Test](https://github.com/tmux-contrib/tmux-amphetamine/actions/workflows/test.yml/badge.svg)](https://github.com/tmux-contrib/tmux-amphetamine/actions/workflows/test.yml) [![Release](https://img.shields.io/github/v/release/tmux-contrib/tmux-amphetamine)](https://github.com/tmux-contrib/tmux-amphetamine/releases) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Show [Amphetamine](https://apps.apple.com/app/amphetamine/id937984704) keep-awake session status in your tmux status bar.
 
