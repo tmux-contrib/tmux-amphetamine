@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/tmux-contrib/tmux-amphetamine/compare/v0.2.2...v0.2.3) (2026-11-07)
+
+
+### Bug Fixes
+
+* **ci:** merge with the App token so main gets its CI run ([#42](https://github.com/tmux-contrib/tmux-amphetamine/issues/42)) ([8c2b149](https://github.com/tmux-contrib/tmux-amphetamine/commit/8c2b1496b990aefcd6d67c827853c3696991a7df))
+
 ## [0.2.2](https://github.com/tmux-contrib/tmux-amphetamine/compare/v0.2.1...v0.2.2) (2026-05-04)
 
 
